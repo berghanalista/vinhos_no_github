@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <f:facet name="first">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Vinhos</title>
+    </f:facet>
+    <h:outputStylesheet library="css" name="login.css" />
+</h:head>
+    
+    
+<h:body>
+    <header class="v-topo">
+        <h:graphicImage library="imagem" name="vinhoseVinhos_logo.png"/>
+    </header>
+
+    <h:form id="form-login">
+        
+        <h:panelGroup style="margin: auto; display: block; width: 350px; height: 380px;  margin-top: 100px;" layout="block">
+           <h3>Login</h3>
+           <p:panelGrid columns="2" styleClass="ui-noborder">
+                <h:outputText value="Usuário" />
+                <p:inputText id="usuario-nome" value="#{loginBean.usuario.nome}" />
+                <h:outputText value="Senha" />
+                <p:password value="#{loginBean.usuario.senha}" />
+                <h:inputHidden />
+                <p:commandButton value="Logar" action="#{loginBean.logar()}"  icon="pi pi-key"  style="font-size: 1rem"/>
+            </p:panelGrid>
+        </h:panelGroup>
+        
+    </h:form>
+
+   
+ 
+</h:body>
+</html>
+

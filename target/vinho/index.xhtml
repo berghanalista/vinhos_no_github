@@ -2,67 +2,73 @@
 <html lang="en"
       xmlns="http://www.w3c.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-        xmlns:p="http://primefaces.org/ui"
-        xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-    <f:facet name="first">
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Vinhos</title>
-    </f:facet>
-    
-    <h:outputStylesheet library="webjars" name="font-awesome/5.12.0/css/all.min-jsf.css" />
-    <h:outputStylesheet library="webjars" name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
-    <h:outputStylesheet library="css" name="index.css" />
-    
-    <h:outputScript library="js"  name="layoutscript.js"/>
-</h:head>
-<h:body>
-    <header class="v-topo">
-        <h:graphicImage library="imagem" name="vinhos.png"/>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <f:facet name="first">
+            <meta charset="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Vinhos</title>
+        </f:facet>
 
-        <a id="v-toggle" href="#" class="v-toggle  js-toggle"><i class="fa fa-bars"></i></a>
-    </header>
+        <h:outputStylesheet library="webjars" name="font-awesome/5.12.0/css/all.min-jsf.css" />
+        <h:outputStylesheet library="webjars" name="font-awesome/5.12.0/css/v4-shims.min-jsf.css" />
+        <h:outputStylesheet library="css" name="index.css" />
 
-    <aside class="v-sidebar js-sidebar">
-        <nav class="v-menu">
-        <ul>
-            <li>
-                <a><i class="fas fa-home"></i>Início</a>
-            </li>
-            <li >
-                <a ><i class="fas  fa-user"></i>Usuario</a>
-            </li>
-            <li>
-                <h:link outcome="cadastro-cliente"><i class="fas  fa-user"></i>Cliente</h:link>
-            </li>
-            <li>
-                <h:link outcome="cadastro-produto"><i class="fas fa-wine-bottle"></i>Produto</h:link>
-            </li>
-            <li>
-                <a><i class="fas fa-user"></i>Sommelier</a>
-            </li>
-            <li>
-                <a><i class="fas fa-wine-bottle"></i>Venda</a>
-            </li>
-            <li>
-                <a><i class="fas fa-percentage"></i>Estatística</a>
-            </li>
-            <li>
-                <a><i class="fas fa-smile"></i>Satisfação</a>
-            </li>
-        </ul>
-    </nav>
-    </aside>
+        <h:outputScript library="js"  name="layoutscript.js"/>
+    </h:head>
+    <h:body>
+        <header class="v-topo">
+            <h:graphicImage library="imagem" name="vinhoseVinhos_logo.png"/>
 
-         <section class="cr-content  js-content">
-		<ui:insert name="content" />
+            <a id="v-toggle"  class="v-toggle  js-toggle"><i class="fa fa-bars"></i></a>
+           
+            <h:outputLabel style=" float: right; line-height: 50px;
+                           margin-right: 35px; color: #fff;" value="#{loginBean.usuario.nome}" />
+
+               
+            
+        </header>
+
+        <aside class="v-sidebar js-sidebar">
+            <nav class="v-menu">
+                <ul>
+                    <li>
+                        <a><i class="fas fa-home"></i>Início</a>
+                    </li>
+                    <li >
+                        <h:link outcome="cadastro-usuario" ><i class="fas  fa-user"></i>Usuario</h:link>
+                    </li>
+                    <li>
+                    <h:link outcome="cadastro-cliente"><i class="fas  fa-user"></i>Cliente</h:link>
+                    </li>
+                    <li>
+                    <h:link outcome="cadastro-produto"><i class="fas fa-wine-bottle"></i>Produto</h:link>
+                    </li>
+                    <li>
+                        <a><i class="fas fa-user"></i>Sommelier</a>
+                    </li>
+                    <li>
+                        <a><i class="fas fa-wine-bottle"></i>Venda</a>
+                    </li>
+                    <li>
+                        <a><i class="fas fa-percentage"></i>Estatística</a>
+                    </li>
+                    <li>
+                        <a><i class="fas fa-smile"></i>Satisfação</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="cr-content  js-content">
+            <ui:insert name="content" />
         </section>
 
 
-   
- 
-</h:body>
+
+
+    </h:body>
 </html>
 
