@@ -1,0 +1,76 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="index.xhtml">
+
+
+
+    <ui:define name="content">
+       
+
+        <h1 style="padding-top: 10px;" class="titulo-cad-usu">Cadastro de Produto</h1>
+
+
+
+
+        <h:form id="frm2">
+
+            <p:growl id="msgs" showDetail="true"  life="4000"/>
+            <!--<p:focus for="nomeusuario" />-->
+            <div class="card">
+
+                <p:focus for="vinicula" />
+                <p:panelGrid columns="3" columnClasses="ui-grid-col-2, ui-grid-col-4, ui-grid-col-6" layout="grid"
+                             styleClass="ui-panelgrid-blank ui-fluid">
+
+                    <h:outputLabel value="Vinícula: " />
+                    <p:inputText id="vinicula" value="" required="true" requiredMessage="O campo nome não pode estar vazio."/>
+
+                    <h:panelGroup />
+
+                    <p:outputLabel value="Teor alcoólico: "/>
+                    <p:selectOneMenu id="option" value="">
+                        <f:selectItem itemLabel="Selecione ..." itemValue=""/>
+                        <f:selectItem itemLabel="5%" itemValue="5"/>
+                        <f:selectItem itemLabel="10%" itemValue="10"/>
+                        <f:selectItem itemLabel="15%" itemValue="15"/>
+                    </p:selectOneMenu>
+
+                    <h:panelGroup/>
+
+                    <p:outputLabel value="Origem: "/>
+                    <p:inputText  value="" required="true" requiredMessage="O campo nome não pode estar vazio."/>
+
+                    <h:panelGroup/>
+
+                    <p:outputLabel value="Preço: "/>
+                    <p:inputMask id="valor"  size="10" placeholder="R$">
+                        <f:convertNumber locale="pt_BR" maxFractionDigits="2" minFractionDigits="2" />
+                    </p:inputMask>
+                    <h:panelGroup />
+                    <h:panelGroup />
+                    <p:commandButton value="Gravar"/>
+
+
+
+                </p:panelGrid>
+            </div>
+
+
+
+
+          
+        </h:form>
+
+
+
+
+
+
+    </ui:define>
+
+
+
+</ui:composition>
