@@ -115,3 +115,7 @@
         margin-left: 0;
     }
 }
+
+.product-list-action{
+    float: right;
+}

@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="index.xhtml">
+
+
+
+    <ui:define name="content">
+       
+
+        <h1 style="padding-top: 10px; padding-bottom: 15px;" class="titulo-cad-usu">Produtos</h1>
+
+        <div class="card" >
+    <h:form>
+        
+        <p:dataTable value="#{dataScrollerView.products}" var="product" >
+           
+            
+            <p:column headerText="Vinícula" responsivePriority="1">
+                
+                <h:outputLabel value="#{product.vinicula}" />
+            </p:column>
+            <p:column headerText="Origem" responsivePriority="4">
+                <h:outputLabel value="#{product.origem}" />
+            </p:column>
+            <p:column headerText="Teor" responsivePriority="3">
+                <h:outputLabel value="#{product.teorAlcoolico}" />
+            </p:column>
+            <p:column headerText="Preço" responsivePriority="2">
+                <h:outputLabel value="#{product.preco}" />
+            </p:column>
+            
+            <p:column style="text-align: center;" headerText="Ação">
+                <p:commandButton style="width: auto;" value="Adicionar ao Carrinho" icon="pi pi-shopping-cart">
+                        </p:commandButton>
+            </p:column>
+            
+        </p:dataTable>
+        
+        
+        
+      
+                        
+                   
+    </h:form>
+</div>
+
+
+        
+
+
+
+
+
+
+    </ui:define>
+
+
+
+</ui:composition>
